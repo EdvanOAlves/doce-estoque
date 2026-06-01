@@ -19,7 +19,7 @@ CREATE TABLE doce (
     quantidade INT NOT NULL,
 
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_vencimento DATE NOT NULL,
+    data_vencimento DATE NULL,
 
     data_descarte TIMESTAMP NULL,
     usuario_cadastro_id INTEGER NOT NULL,
@@ -30,5 +30,11 @@ CREATE TABLE doce (
 	CONSTRAINT fk_usuario_doce_descarte
     FOREIGN KEY (usuario_descarte_id) REFERENCES usuario(id)
 );
+
+INSERT INTO usuario(nome, senha)
+VALUES('Cake boss', '123');
+
+INSERT INTO doce(nome, quantidade, usuario_cadastro_id)
+VALUES('Bolo de morango', 3, 1);
 
 
