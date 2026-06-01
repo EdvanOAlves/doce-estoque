@@ -1,6 +1,6 @@
 
 
-import knex from '../database.js'
+const knex = require('../database.js')
 
 // retorna os doces
 const getSweets = async function(){
